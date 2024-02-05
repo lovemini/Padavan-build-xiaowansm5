@@ -65,6 +65,9 @@ jobs:
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y/g' .config
         ######################################################################
+        #lovemini软件更新
+        sed -i 's/FRP_VER := 0.29.0/FRP_VER := 0.54.0/g' ./user/frp/Makefile
+        ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
         if [ $KERNEL = "4.4" ] ; then
