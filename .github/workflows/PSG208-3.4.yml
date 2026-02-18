@@ -104,6 +104,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_DDNS=y" >> .config #DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_upnp=y" >> .config #upnp
         echo "CONFIG_FIRMWARE_INCLUDE_vlmcsd=y" >> .config #vlmcsd
+        echo "CONFIG_FIRMWARE_INCLUDE_autoreboot=y" >> .config #autoreboot
         fi
         #########################################################################################
         #lovemini软件更新
