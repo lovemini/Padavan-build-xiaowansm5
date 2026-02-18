@@ -1,6 +1,6 @@
 
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: PSG1208 padvan 4.4 云编译
+name: PSG1208 padvan KVR 云编译
 
 on: 
   repository_dispatch:
@@ -35,13 +35,13 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       env:
-        KERNEL: 4.4
+        KERNEL: 3.4
       run: |
         if [ $KERNEL = "4.4" ] ; then
-        #git clone --depth=1 https://github.com/xiaowansm5/Padavan-KVR.git /opt/rt-n56u
-        git clone --depth=1 https://github.com/vb1980/Padavan-KVR.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/xiaowansm5/Padavan-KVR.git /opt/rt-n56u
         else
-        git clone --depth=1 https://github.com/xiaowansm5/Padavan.git /opt/rt-n56u
+        #git clone --depth=1 https://github.com/xiaowansm5/Padavan.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/vb1980/Padavan-KVR.git /opt/rt-n56u
         fi
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
@@ -49,7 +49,7 @@ jobs:
     - name: Build Firmware
       env:
         TNAME: PSG1208
-        KERNEL: 4.4
+        KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
