@@ -2,6 +2,8 @@
 name: RM2100-4.4内核云编译
 
 on: 
+  repository_dispatch:
+  workflow_dispatch:
   release:
     types: [published]
   push:
@@ -102,4 +104,5 @@ jobs:
       with:
         name: Padavan-packages
         path: /opt/images
+
 
